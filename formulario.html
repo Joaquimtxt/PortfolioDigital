@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joaquim Guilherme de Souza Ramos</title>
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <body class="container-fluid overflow-x-hidden">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top w-100 navbar-bg">
+      <div class="container">
+        <h1 class="mb-0 flex-grow-1 text-center text-lg-start">
+          <a class="fw-bolder text-decoration-none txtOrange" href="index.html">
+            Joaquim
+          </a>
+        </h1>
+        <button
+          class="navbar-toggler ms-auto border border-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#Sobre">Sobre Mim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#Ferramentas"
+                >Ferramentas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#Projetos">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./formulario.html">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <section class="contact-section mx-auto">
+        <div class="contact-hero text-center text-lg-start mb-4 mb-lg-5">
+          <span class="contact-eyebrow">Contato direto</span>
+          <h2 class="display-6 fw-bolder mb-3">
+            Envie sua mensagem para o meu e-mail
+          </h2>
+          <p class="mb-0 text-white-50">
+            Preencha o formulário abaixo e clique em enviar. Sua mensagem será
+            aberta no Gmail com o seu e-mail e o texto já montado para
+            <strong>jocaq124@gmail.com</strong>.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-lg-5">
+            <aside class="contact-panel h-100">
+              <h3 class="h5 fw-bold mb-3">Antes de enviar</h3>
+              <p class="text-white-50 mb-4">
+                Deixe seu nome, e-mail e escreva com clareza o que você precisa.
+                Assim eu consigo responder mais rápido.
+              </p>
+
+              <div class="contact-note">
+                <i class="bi bi-envelope-paper-fill"></i>
+                <div>
+                  <strong>Destino da mensagem</strong>
+                  <p class="mb-0">jocaq124@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-note mt-3">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <div>
+                  <strong>Formato</strong>
+                  <p class="mb-0">
+                    Assunto automático + nome + e-mail + mensagem.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="col-12 col-lg-7">
+            <form class="contact-form h-100" id="formCadastro" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nome" class="form-label fw-semibold">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe o seu nome.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="email@exemplo.com"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe um e-mail válido.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="mensagem" class="form-label fw-semibold"
+                    >Mensagem</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="mensagem"
+                    name="mensagem"
+                    rows="7"
+                    placeholder="Escreva sua mensagem aqui"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Escreva a sua mensagem.</div>
+                </div>
+
+                <div
+                  class="col-12 d-flex flex-column flex-sm-row gap-3 align-items-sm-center justify-content-between mt-2"
+                >
+                  <p class="small text-white-50 mb-0">
+                    Ao clicar em enviar, o Gmail será aberto com tudo
+                    preenchido.
+                  </p>
+                  <button
+                    type="submit"
+                    class="btn btn-contact px-4 py-2 fw-semibold"
+                  >
+                    Enviar mensagem
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-bg w-100 fixed-bottom py-3">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between gap-2 gap-lg-0"
+        >
+          <p class="text-light mb-0 text-center order-1 order-lg-1">
+            <strong id="anoAt"></strong> &copy; Feito com Amor por Joaquim ❤️
+          </p>
+
+          <ul
+            class="list-unstyled d-flex justify-content-center justify-content-lg-end gap-3 mb-0 order-2 order-lg-2"
+          >
+            <li>
+              <a
+                class="d-inline-flex align-items-center justify-content-center rounded-circle text-decoration-none social-icon"
+                href="https://www.linkedin.com/in/joaquimguisramos/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                class="d-inline-flex align-items-center justify-content-center rounded-circle text-decoration-none social-icon"
+                href="https://github.com/joaquimtxt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</html>

@@ -4,9 +4,7 @@ const timelineData = [
     title: "Robótica no Sesi 026",
     description:
       "Primeiro contato com circuitos, lógica de programação e Arduino, com participação em duas OBRs.",
-    tools: [
-      { name: "Arduino", image: "img/Arduino.png" }
-    ]
+    tools: [{ name: "Arduino", image: "img/Arduino.png" }],
   },
   {
     period: "1º semestre de 2024",
@@ -17,8 +15,8 @@ const timelineData = [
       { name: "HTML", image: "img/HTML.png" },
       { name: "CSS", image: "img/CSS.png" },
       { name: "JavaScript", image: "img/JS.png" },
-      { name: "Python", image: "img/Python.png" }
-    ]
+      { name: "Python", image: "img/Python.png" },
+    ],
   },
   {
     period: "2º semestre de 2024",
@@ -27,8 +25,8 @@ const timelineData = [
       "Aprofundamento em front-end e início da prática de responsividade, e com o C# para desenvolvimento de MVCs",
     tools: [
       { name: "Bootstrap", image: "img/Bootstrap.png" },
-      { name: "C#", image: "img/csharp.png" }
-    ]
+      { name: "C#", image: "img/csharp.png" },
+    ],
   },
   {
     period: "2025",
@@ -39,8 +37,8 @@ const timelineData = [
       { name: "React", image: "img/React.png" },
       { name: "MSSQL", image: "img/MSSQL.png" },
       { name: "Arduino", image: "img/Arduino.png" },
-      { name: "C#", image: "img/csharp.png" }
-    ]
+      { name: "C#", image: "img/csharp.png" },
+    ],
   },
   {
     period: "2026",
@@ -53,9 +51,9 @@ const timelineData = [
       { name: "JavaScript", image: "img/JS.png" },
       { name: "PHP", image: "img/PHP.png" },
       { name: "C#", image: "img/csharp.png" },
-      { name: "Docker", image: "img/Docker.png" }
-    ]
-  }
+      { name: "Docker", image: "img/Docker.png" },
+    ],
+  },
 ];
 
 const anoAtualizado = () => {
@@ -70,7 +68,10 @@ const anoAtualizado = () => {
   const diaAtual = dataAtual.getDate();
   const diaNascimento = dataNascimento.getDate();
 
-  if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+  if (
+    mesAtual < mesNascimento ||
+    (mesAtual === mesNascimento && diaAtual < diaNascimento)
+  ) {
     idade--;
   }
 
@@ -117,7 +118,7 @@ const initTimeline = () => {
                   <img src="${tool.image}" alt="${tool.name}">
                   <span>${tool.name}</span>
                 </article>
-              `
+              `,
             )
             .join("")}
         </div>
@@ -134,7 +135,40 @@ const initTimeline = () => {
   renderTimelineCard(Number(rangeElement.value));
 };
 
+const initContactForm = () => {
+  const form = document.getElementById("formCadastro");
+
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
+
+    const nome = document.getElementById("nome")?.value.trim() || "";
+    const email = document.getElementById("email")?.value.trim() || "";
+    const mensagem = document.getElementById("mensagem")?.value.trim() || "";
+
+    const assunto = encodeURIComponent(
+      `Contato do site - ${nome || "Visitante"}`,
+    );
+    const corpo = encodeURIComponent(
+      `Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${mensagem}`,
+    );
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jocaq124@gmail.com&su=${assunto}&body=${corpo}`;
+
+    window.location.assign(gmailUrl);
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   anoAtualizado();
   initTimeline();
+  initContactForm();
 });
